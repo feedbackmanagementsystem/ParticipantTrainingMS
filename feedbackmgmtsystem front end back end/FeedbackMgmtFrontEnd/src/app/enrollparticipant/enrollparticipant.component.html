@@ -1,0 +1,109 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+<body style="background-color:rgba(255, 145, 0, 0.26);">
+<div style="text-align: center">
+    <h6>{{message}}=</h6>
+   
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <form>
+                <fieldset>
+                    <legend class="text-center">Valid information is required to register. <span class="req"><small>
+                        required *</small></span></legend>
+
+                                <div class="form-group">
+                                    <label> ParticipantId: </label>
+                                    <input  class="form-control" type="number"  [(ngModel)]="participant.participantId" name="participantId" id="txt" required #ID=ngModel
+                                        placeholder="Enter valid ParticipantId" />
+                                     <div class="text-danger" *ngIf="ID.touched && ID.invalid">
+                                         
+                                         <div *ngIf="ID.errors.required">ID is required</div>
+                                         
+                                     </div>   
+         
+                                </div>
+
+                    <div class="form-group">
+                        <label> Participant Name:</label>
+                        <input class="form-control" type="text" [(ngModel)]="participant.participantName" name="participantName" id="txt" required #ParticipantName=ngModel
+                            placeholder="Participant Name" />
+                            <div class="text-danger" *ngIf="ParticipantName.touched && ParticipantName.invalid">
+                
+                                         
+                                <div *ngIf="ParticipantName.errors.required">ParticipantName Is Required</div>
+                            </div> 
+                        
+                    </div>
+
+                    <div class="form-group">
+                        <label>Phone Number: </label>
+                        <input class="form-control" type="number" [(ngModel)]="participant.participantsPhoneNumber" name="participantsPhoneNumber" id="txt" required #ParticipantPhoneNumber=ngModel
+                            placeholder="Phone number" />
+
+                            <div class="text-danger" *ngIf="ParticipantPhoneNumber.touched && ParticipantPhoneNumber.invalid">
+                                         
+                                <div *ngIf="ParticipantPhoneNumber.errors.required">Required Field</div>
+                            </div>
+                       
+                    </div>
+
+
+                    <div class="form-group">
+                        <label>Traing Program Code: </label>
+                        <input class="form-control" type="text" [(ngModel)]="participant.participantsTraingProgramCode"name="participantsTraingProgramCode" id="txt" required #ParticipantsTraingProgramCode=ngModel
+                            placeholder="Program Code" />
+
+                            <div class="text-danger" *ngIf="ParticipantsTraingProgramCode.touched && ParticipantsTraingProgramCode.invalid">
+                                         
+                                <div *ngIf="ParticipantsTraingProgramCode.errors.required"> Required Field</div>
+                            </div>
+                        
+                    </div>
+
+                    <div class="form-group">
+                        <label>Traing Program Name: </label>
+                        <input class="form-control" type="text" [(ngModel)]="participant.participantsTraingProgramName"name="participantsTraingProgramName" id="txt"  required #ParticipantsTraingProgramName=ngModel
+                            placeholder="Program Name" />
+                            <div class="text-danger" *ngIf="ParticipantsTraingProgramName.touched && ParticipantsTraingProgramName.invalid">
+                                         
+                                <div *ngIf="ParticipantsTraingProgramName.errors.required">Required Field</div>
+                            </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Program Duration: </label>
+                        
+                        <input class="form-control" type="string" [(ngModel)]="participant. traingProgramDuration"name=" traingProgramDuration" id="txt" required #TraingProgramDuration=ngModel
+                            placeholder=" Program Duration" />
+                           
+                            <div class="text-danger" *ngIf="TraingProgramDuration.touched && TraingProgramDuration.invalid">
+                                         
+                                <div *ngIf="TraingProgramDuration.errors.required">Required Field</div>
+                            </div>
+                    </div>
+
+                    
+                    <div class="form-group">
+                        <input class="btn btn-success" type="submit" name="submit_reg" value="Register" (click)="registerNow()">
+                    
+                    
+                    </div>
+                    <div>
+                        <h3>
+                        <a href="http://localhost:4200/trainingprogram"><u>Visit our trainingprogram List</u></a>
+                    </h3>
+                </div>
+                    
+                </fieldset>
+            </form><!-- ends register form -->
+            <!-- second for to fiter user-->
+        </div><!-- ends col-6 -->
+        
+    </div>
+</div>
+</body>
